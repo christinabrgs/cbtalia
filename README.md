@@ -1,64 +1,45 @@
-# [Astro](https://astro.build) Blog Template
+# Christina's Personal Website
 
-[![Screenshot](screenshot.png)](https://astro-blog-template.netlify.app/)
+A modern personal portfolio website built with Astro, featuring web development projects, UI/UX design work, and blog content.
 
-## 👉 Check out the ✨ [Live Demo](https://astro-blog-template.netlify.app/) ✨
+## Tech Stack
 
-## 👩‍🚀 Getting Started
+- Framework: Astro 4.0
+- Styling: CSS with responsive design
+- Content: Markdown for blog posts
+- Deployment: Ready for Netlify, Vercel, or any static hosting
 
-### Locally
-
-```
-npm init astro -- --template Charca/astro-blog-template
-```
-
-### On StackBlitz
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/charca/astro-blog-template)
-
-## ✨ Features:
-
-- ✅ Astro 4.0
-- ✅ Dark Mode
-- ✅ Full Markdown support
-- ✅ SEO-friendly setup with canonical URLs and OpenGraph data
-- ✅ RSS 2.0 generation
-- ✅ Sitemap.xml generation
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   ├── robots.txt
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   │   └── Tour.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
+## Commands
 
 | Command           | Action                                       |
 | :---------------- | :------------------------------------------- |
 | `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3030`  |
+| `npm run dev`     | Starts local dev server at `localhost:4321`  |
 | `npm run build`   | Build your production site to `./dist/`      |
 | `npm run preview` | Preview your build locally, before deploying |
 
-## 👀 Want to learn more?
+## Content Management
 
-Feel free to check [Astro's documentation](https://github.com/withastro/astro) or jump into Astro's [Discord server](https://astro.build/chat).
+### Blog Posts
+Add new blog posts as `.md` files in `src/data/blog-posts/` with frontmatter:
+
+```markdown
+---
+title: "Your Post Title"
+pubDate: 2024-01-01
+description: "A brief description of your post"
+layout: "../../layouts/BlogPostLayout.astro"
+---
+
+Your blog content here...
+```
+
+### Projects
+Update projects in `src/pages/about.astro` by modifying the projects list section.
+
+## Customization
+
+- Colors: Modify CSS variables in `src/styles/global.css`
+- Fonts: Update font imports in `src/styles/fonts.css`
+- Layout: Edit components in `src/components/`
+- Content: Update pages in `src/pages/`
