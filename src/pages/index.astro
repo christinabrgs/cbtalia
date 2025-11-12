@@ -1,9 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { Image } from 'astro:assets';
-import design from '/assets/design.svg'
-import development from '/assets/development.svg'
-import branding from '/assets/branding.svg'
 const title = 'Cbtalia';
 const description = 'transforming ideas into reality through thoughtful design and development.';
 const permalink = Astro.site.href;
@@ -12,8 +8,8 @@ const permalink = Astro.site.href;
 <BaseLayout title={title} description={description} permalink={permalink}>
   <div class="home-container">
     <div class="home-copy">
-      <h1>Hi, I'm Christina</h1>
-      <p>I'm a Software Engineer and UI Designer. </p>
+      <h1>Hi, Im Christina</h1>
+      <p>Im a Software Engineer and UI Designer. </p>
       <p>I curate events at <a href="https://phlcode.club" target="_blank" rel="noopener">PHL Code Club</a></p>
     <a class="no-padding" aria-label="linkedin link" href="https://linkedin.com/in/christinatburgos/" target="_blank">
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
@@ -36,7 +32,7 @@ const permalink = Astro.site.href;
     <div class="hero-image-container">
       <picture>
         <source srcset="/assets/gopher.jpg" media="(min-width: 600px)">
-        <Image class="hero-image" alt="me at GohperCon" src="/assets/gopher.jpg" width="550" height="466" />
+        <img class="hero-image" alt="me at GohperCon" src="/assets/gopher.jpg" width="550" height="466" />
       </picture>
       <p class="caption">
         Me at GohperCon this year
@@ -45,8 +41,8 @@ const permalink = Astro.site.href;
   </div>
   <div class="about-container">
     <h2>ABOUT ME</h2>
-    <p>I'm passionate about transforming ideas into reality through thoughtful design and development. I combine technical expertise with a user-centered approach to create meaningful experiences. With a background in IT and UX, I bring a unique perspective that enables me to build creative yet effective solutions.</p>
-    <p>Outside of work, you’ll find me savoring a good cup of coffee, pushing my limits in the gym (deadlift PR: 285, bench PR: 145), or exploring my artistic side. I’m always eager to learn, right now I'm looking forward to learning the art of home labbing (wish me luck >.<)</p>
+    <p>Im passionate about transforming ideas into reality through thoughtful design and development. I combine technical expertise with a user-centered approach to create meaningful experiences. With a background in IT and UX, I bring a unique perspective that enables me to build creative yet effective solutions.</p>
+    <p>Outside of work, you’ll find me savoring a good cup of coffee, pushing my limits in the gym (deadlift PR: 285, bench PR: 145), or exploring my artistic side. I’m always eager to learn, right now Im looking forward to learning the art of home labbing (wish me luck >.<)</p>
   </div>
 
   <div class="services-container">
@@ -54,17 +50,17 @@ const permalink = Astro.site.href;
     <div class="services-grid">
       <div class="service-card">
         <h3>UI DESIGN</h3>
-        <Image src={design} alt='design' width="50" height="50" />
+        <img src="/assets/design.svg" alt="design" width="50" height="50" />
         <p>Designs that look great, feel intuitive, and meet WCAG accessibility standards</p> 
       </div>
       <div class="service-card">
         <h3>DEVELOPMENT</h3>
-        <Image src={development} alt='design' width="50" height="50" />
+        <img src="/assets/development.svg" alt="development" width="50" height="50" />
         <p>Full-stack web and mobile solutions that scale</p>
       </div>
       <div class="service-card">
         <h3>BRANDING</h3>
-        <Image src={branding} alt='design' width="50" height="50" />
+        <img src="/assets/branding.svg" alt="branding" width="50" height="50" />
         <p>Visuals speak louder than words, make sure your brand leaves a mark and tells your story</p>
       </div>
     </div>
