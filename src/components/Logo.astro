@@ -1,0 +1,25 @@
+<style>
+  .logo {
+    display: block;
+    width: 200px;
+    height: 50px;
+    background-image: url("/assets/logo_dark.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  :root.theme-dark .logo {
+    background-image: url("/assets/logo.svg");
+  }
+
+  @media screen and (max-width: 520px) {
+    .logo {
+      display: none;
+    }
+  }
+</style>
+
+<a href="/" aria-label="website-logo">
+  <div class="logo" role="img" aria-label="Blog Logo"></div>
+</a>
