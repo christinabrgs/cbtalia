@@ -196,6 +196,14 @@ const permalink = Astro.site.href;
     justify-content: center;
   }
 
+  .service-card img {
+    filter: brightness(0.3) sepia(1) hue-rotate(180deg) saturate(2);
+  }
+
+  :root.theme-dark .service-card img {
+    filter: brightness(0) invert(1);
+  }
+
     line-height: 1.6;
   }
 </style>
