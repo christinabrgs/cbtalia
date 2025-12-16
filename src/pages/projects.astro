@@ -8,8 +8,21 @@ const permalink = `${Astro.site.href}projects`;
 
 <BaseLayout title={title} description={description} permalink={permalink} current="projects">
   <div class="container">
-    <h1>Current Projects</h1>
-    <h2>A showcase of my recent work in web development, mobile apps, and design</h2>
+    <h1>Current</h1>
+    <h2>Projects I'm currently pouring into ✎</h2>
+    <div class="projects-list">
+      <div class="project-item">
+        <h3><a href="https://github.com/christinabrgs/discord-cal-bot" target="_blank" rel="noopener">Discord Event Creation Bot</a></h3>
+        <p>Out of a desire to make event sharing easier for Discord communities, I’ve been building a bot that automatically syncs events to a 
+        Discord calendar. All you need to do is provide an ICS calendar URL, and it handles the rest - Golang</p>
+      </div>
+      <div class="project-item">
+        <h3><a href="https://www.phlcode.club" target="_blank" rel="noopener">PHL Code Club</a></h3>
+        <p>I have been challenging my creative muscles designing and developing the website for PHL Code Club - HTML, CSS, Vanilla JS, Astro Template</p>
+      </div>
+    </div>
+    <h1>Past</h1>
+    <h2>Some of my past work in web/ mobile app development, and design</h2>
     <div class="projects-list">
       <div class="project-item">
         <h3><a href="/EXPLORE.pdf" target="_blank" rel="noopener">Explore PIT</a></h3>
