@@ -1,3 +1,13 @@
+---
+title: Building a CLI, Septa API Pains, & Unmarshalling 
+slug: septa-cli
+publishDate: 01 March 2026
+description: A journey through building a CLI on top of a public API (SEPTA by popular vote) in Go.
+
+---
+
+
+
 # Building a CLI, Septa API Pains, & Unmarshalling
 
 [PHL Code Club](https://phlcode.club?utm_source=chris-blog) hosted their first mini hack night on Wednesday, January 28th, Let's Build it {Period}. It was a night full of creative minds coming together and building simply for the joy of creating. (Maybe I am biased considering I helped organize the event). But I particularly enjoyed experiencing the event in the shoes of an attendee and participating in the activities.
@@ -14,21 +24,42 @@ But I digress, back to the building of the CLI...
 
 ## Setting Up a CLI Project with Go and Cobra CLI
 
-To begin, you should have Go installed. You can check this by running: ```go version```
+To begin, you should have Go installed. You can check this by running:
+
+```bash
+go version
+```
 
 This should output the version of go you are running. If it is not installed, then head over to the [go docs](https://go.dev/dev/install) before reading on.
 
-Cobra will also need to be installed: ```go install github.com/spf13/cobra-cli```  (this package generates your cobra application, taking care of set up so you can focus on writing your command logic)
+Cobra will also need to be installed:
+
+```bash
+go install github.com/spf13/cobra-cli
+```  (this package generates your cobra application, taking care of set up so you can focus on writing your command logic)
 
 Once Go and Cobra are installed, we can initialize our project!
+```bash
+go mod init
+```
 
-```go mod init```
+Next, we need to initialize the cobra application:
 
-Next, we need to initialize the cobra application ```cobra-cli init```
+```bash
+cobra-cli init
+```
 
-add a new command ```cobra-cli add command```
+add a new command:
 
-run the command ```./project command```
+```bash
+cobra-cli add command
+```
+
+run the command:
+
+```bash
+./project command
+```
 
 and there you go, you have a basic template to get started! Yayyy, air five if you're still with me!
 
@@ -54,7 +85,7 @@ Then it clicked, the Time field in the go struct was an empty string, hence the 
 
 For reference, our go struct is written as
 
-```
+```go
 type Arrival struct {
  StopName      string
  Route         string
@@ -66,7 +97,7 @@ type Arrival struct {
 
 while the septa JSON object is written as
 
-```
+```json
 {
 "StopName":"",
 "Route":"",
@@ -80,7 +111,7 @@ can you see the bug? .-.
 
 ## Unmarshalling
 
-This is when knowing how Go processes data is important, specifically the _unmarshal_ method from the ```encoding/json``` package. So let's talk about how this function works.
+This is when knowing how Go processes data is important, specifically the **unmarshal** method from the **encoding/json** package. So let's talk about how this function works.
 
 **Definition** Unmarshalling is the process of unpacking data from one source and reconstructing that data into a structure your program can use.
 
@@ -88,7 +119,9 @@ In Go, the unmarshal function specifically takes a JSON encoded string, unpacks 
 
 the code looks as follows:
 
-```func Unmarshal(in []byte, out any, opts ...Options) (err error)```
+```go
+func Unmarshal(in []byte, out any, opts ...Options) (err error)
+```
 
 In our list of arguments, we have, **in**, this must be a single JSON value and, **out**, a non-nil pointer.
 
@@ -98,9 +131,9 @@ If a JSON's key does not have a matching field name, the unmarshalling method wi
 
 How can we prevent this? That's where tagging Go struct fields ahead of time comes in handy.
 
-In our Arrival struct, we need to tag `json:"Date"` to the Time field in order for the unmarshaller to properly match the key to the field.
+In our Arrival struct, we need to tag **json:"Date"** to the Time field in order for the unmarshaller to properly match the key to the field.
 
-```
+```go
 type Arrival struct {
  StopName      string
  Route         string
@@ -114,7 +147,7 @@ One small change and wam bam, we have a properly decoded JSON object ready to go
 
 ## Closing Note
 
-One of the best ways to learn is by writing buggy code. Yes, it can be frustrating when you don't know what's going on or why your program is not running as expected. But when you take a moment to step back, you realize some really fun lessons can come out of a small hiccup in your lines of code.
+One of the best ways to learn is by writing buggy code. Yes, it can be frustrating when you don't know what's going on or why your program is not running as expected. But when you take a moment to step back, you realize that some really fun lessons can come from a small hiccup in your code.
 
 Resources:
 
