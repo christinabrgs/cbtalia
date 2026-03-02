@@ -7,6 +7,7 @@ const parser = new MarkdownIt();
 
 export async function GET(context) {
   const posts = await getCollection('posts')
+
   return rss({
     // `<title>` field in output xml
     title: 'Chris’ Blog',
@@ -21,7 +22,7 @@ export async function GET(context) {
       title: post.data.title,
       pubDate: post.data.publishDate,
       description: post.data.description,
-      link: `blog/${post.slug}`,
+      link: `blog/${post.data.slug}`,
       content: sanitizeHtml(parser.render(post.body), {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
       }),

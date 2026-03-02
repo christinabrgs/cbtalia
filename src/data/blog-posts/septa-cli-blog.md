@@ -18,9 +18,9 @@ Utilize a public API (SEPTA by popular vote) and build something, anything! in t
 
 At first, I thought I would try my hand at data visualization for this but then the idea of building a CLI (Command Line Interface) was suggested... creating a client for the terminal? Hell Yeah.
 
-In terms of coding, this process was pretty straight forward. On the other hand, SEPTA docs were not. I admittedly spent a majority of my time reading through under developed documentation. It took me digging up data from 2023 to get a full description of the API fields I needed. If anyone at Septa is reading this, please update your docs.
+In terms of coding, this process was pretty straight forward. On the other hand, SEPTA docs were not. I admittedly spent a majority of my time reading through under developed documentation. It took me digging up data from 2023 to get a full description of the API fields I needed...
 
-But I digress, back to the building of the CLI...
+But I digress, back to the building of the CLI
 
 ## Setting Up a CLI Project with Go and Cobra CLI
 
