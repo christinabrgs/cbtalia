@@ -147,7 +147,7 @@ One small change and wam bam, we have a properly decoded JSON object ready to go
 
 ## Closing Note
 
-One of the best ways to learn is by writing buggy code. Yes, it can be frustrating when you don't know what's going on or why your program is not running as expected. But when you take a moment to step back, you realize that some really fun lessons can come from a small hiccup in your code.
+One of the best ways to learn is by writing buggy code. Yes, it can be frustrating when you don't know what's going on or why your program is not running as expected. I know I'm guilty of letting the frustration get to me. But when you do take a moment to step back, you realize that some really fun lessons can come from a small hiccup in your code.
 
 Resources:
 
@@ -155,4 +155,4 @@ Resources:
 
 [Unmarshal Docs](https://pkg.go.dev/encoding/json/v2#Unmarshal)
 
-[Graham's Brain](https://gvasquez.dev/?utm_source=chris-blog) (thank you for always helping me break down concepts until I understand exactly what's going on in the code)
+[Graham's Brain](https://gvasquez.dev/?utm_source=chris-blog) (thank you for always helping me break down every line of code until I understand exactly what's going on)
